@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewpsort" content="width=device-width,initial-scale=1" />
+    <title>Checkout — Keranjang Belanja</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav-main">
+      <div class="nav-left">
+        <a href="index.html" class="back-link">← Kembali ke Katalog</a>
+      </div>
+      <div class="nav-right">
+        <a
+          href="checkout.html"
+          class="cart-link"
+          aria-label="Keranjang Belanja"
+        >
+          <svg
+            class="icon-cart"
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+          >
+            <path
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="10" cy="20" r="1" fill="currentColor" />
+            <circle cx="18" cy="20" r="1" fill="currentColor" />
+          </svg>
+          <span id="cartCountCheckout" class="cart-count">0</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="checkout-main">
+      <h1>Keranjang Anda</h1>
+      <div id="cartItems" class="cart-items"></div>
+
+      <div id="cartSummary" class="cart-summary" aria-live="polite"></div>
+
+      <div id="checkoutFormWrapper" class="checkout-form-wrapper">
+        <h2>Form Pembayaran (Simulasi)</h2>
+        <form id="checkoutForm">
+          <label
+            >Nama Lengkap<input type="text" id="custName" required
+          /></label>
+          <label
+            >Alamat Lengkap<textarea id="custAddress" required></textarea>
+          </label>
+          <label
+            >Metode Pembayaran
+            <select id="payMethod">
+              <option value="transfer">Transfer Bank</option>
+              <option value="cod">Bayar di Tempat (COD)</option>
+              <option value="e-wallet">E-Wallet</option>
+            </select>
+          </label>
+          <button type="submit" id="payBtn">Bayar Sekarang</button>
+        </form>
+      </div>
+
+      <div id="emptyNotice" class="empty-notice" style="display: none">
+        <p>
+          Keranjang kosong. Kembali ke <a href="index.html">katalog</a> untuk
+          menambahkan barang.
+        </p>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
